@@ -1,0 +1,11 @@
+**/packages
+**/.idea
+**/bin
+**/obj
+**/out
+**/log
+**/*.nupkg
+**/*.DotSettings.user
+**/*.DotSettings
+**/Log.jsonl
+**/*.output.jsonl
