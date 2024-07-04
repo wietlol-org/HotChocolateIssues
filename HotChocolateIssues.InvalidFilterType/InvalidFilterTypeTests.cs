@@ -17,6 +17,12 @@ public class InvalidFilterTypeTests(
     }
 
     [Fact]
+    public async Task Books()
+    {
+        var content = await RunQuery("Book");
+    }
+
+    [Fact]
     public async Task DeleteBooks()
     {
         var content = await RunQuery("DeleteBooks");

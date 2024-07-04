@@ -1,5 +1,13 @@
 query {
-    book {
+    book(
+        where: {
+            author: {
+                familyName: {
+                    eq: null
+                }
+            }
+        }
+    ) {
         title
         author {
             name

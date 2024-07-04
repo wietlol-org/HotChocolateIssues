@@ -1,5 +1,6 @@
 namespace HotChocolateIssues.InvalidFilterType.Models;
 
 public record Author(
-    string Name
+    string Name,
+    string? FamilyName
 );
