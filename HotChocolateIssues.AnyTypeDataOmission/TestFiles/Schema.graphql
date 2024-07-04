@@ -1,0 +1,19 @@
+schema {
+    query: Query
+}
+
+type Author {
+    name: String!
+}
+
+type Book {
+    title: String!
+    author: Author!
+}
+
+type Query {
+    booksAny: Any
+    books: [Book!]!
+}
+
+scalar Any
