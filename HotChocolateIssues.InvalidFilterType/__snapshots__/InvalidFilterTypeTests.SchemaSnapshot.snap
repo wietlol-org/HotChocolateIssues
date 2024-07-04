@@ -1,0 +1,49 @@
+﻿schema {
+  query: Query
+  mutation: Mutation
+}
+
+type Author {
+  name: String!
+}
+
+type Book {
+  title: String!
+  author: Author!
+}
+
+type Mutation {
+  deleteBooks(filter: BookFilterInput): String!
+}
+
+type Query {
+  book: Book!
+}
+
+input AuthorFilterInput {
+  and: [AuthorFilterInput!]
+  or: [AuthorFilterInput!]
+  name: StringOperationFilterInput
+}
+
+input BookFilterInput {
+  and: [BookFilterInput!]
+  or: [BookFilterInput!]
+  title: StringOperationFilterInput
+  author: AuthorFilterInput
+}
+
+input StringOperationFilterInput {
+  and: [StringOperationFilterInput!]
+  or: [StringOperationFilterInput!]
+  eq: String
+  neq: String
+  contains: String
+  ncontains: String
+  in: [String]
+  nin: [String]
+  startsWith: String
+  nstartsWith: String
+  endsWith: String
+  nendsWith: String
+}

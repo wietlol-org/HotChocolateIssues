@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotChocolateIssues.Web", "HotChocolateIssues.Web\HotChocolateIssues.Web.csproj", "{A8BB8D2B-E1FA-45C9-A72F-45B411C1DE41}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotChocolateIssues.TestBase", "HotChocolateIssues.TestBase\HotChocolateIssues.TestBase.csproj", "{DF88014D-F8FF-42F9-946E-2DDFC97F0235}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotChocolateIssues.InvalidFilterType", "HotChocolateIssues.InvalidFilterType\HotChocolateIssues.InvalidFilterType.csproj", "{9171BE72-CAD3-4283-9CB7-1A47B946831E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A8BB8D2B-E1FA-45C9-A72F-45B411C1DE41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8BB8D2B-E1FA-45C9-A72F-45B411C1DE41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8BB8D2B-E1FA-45C9-A72F-45B411C1DE41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8BB8D2B-E1FA-45C9-A72F-45B411C1DE41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF88014D-F8FF-42F9-946E-2DDFC97F0235}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF88014D-F8FF-42F9-946E-2DDFC97F0235}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF88014D-F8FF-42F9-946E-2DDFC97F0235}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF88014D-F8FF-42F9-946E-2DDFC97F0235}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9171BE72-CAD3-4283-9CB7-1A47B946831E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9171BE72-CAD3-4283-9CB7-1A47B946831E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9171BE72-CAD3-4283-9CB7-1A47B946831E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9171BE72-CAD3-4283-9CB7-1A47B946831E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
