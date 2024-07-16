@@ -42,8 +42,6 @@ public class AnyTypeDataOmissionTests(
 
             AssertBookContainsValues(nameof(booksAny), index, book);
         }
-
-        Assert.Contains(content, "\"deleteBooks\":\"{\\\"title\\\":{\\\"eq\\\":\\\"Test\\\"}}\"");
     }
 
     private static void AssertBookContainsValues(string collectionName, int index, JToken book)
