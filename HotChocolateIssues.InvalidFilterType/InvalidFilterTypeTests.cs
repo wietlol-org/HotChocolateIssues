@@ -29,6 +29,6 @@ public class InvalidFilterTypeTests(
 
         // the result of the DeleteBooks mutation is the filter that was sent as input,
         // which should be { title: { eq: "Test" } }
-        Assert.Contains(content, "\"deleteBooks\":\"{\\\"title\\\":{\\\"eq\\\":\\\"Test\\\"}}\"");
+        Assert.Contains("\"deleteBooks\":\"{\\\"title\\\":{\\\"eq\\\":\\\"Test\\\"}}\"", content);
     }
 }

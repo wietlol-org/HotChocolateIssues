@@ -14,7 +14,7 @@ type Book {
 }
 
 type Mutation {
-  deleteBooks(filter: Special): String!
+  deleteBooks(filter: BookFilterInput): String!
 }
 
 type Query {
@@ -31,13 +31,6 @@ input AuthorFilterInput {
 input BookFilterInput {
   and: [BookFilterInput!]
   or: [BookFilterInput!]
-  title: StringOperationFilterInput
-  author: AuthorFilterInput
-}
-
-input Special {
-  and: [Special!]
-  or: [Special!]
   title: StringOperationFilterInput
   author: AuthorFilterInput
 }
