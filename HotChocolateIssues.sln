@@ -8,6 +8,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotChocolateIssues.InvalidF
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotChocolateIssues.AnyTypeDataOmission", "HotChocolateIssues.AnyTypeDataOmission\HotChocolateIssues.AnyTypeDataOmission.csproj", "{D818D6E6-3095-4CB5-B8DA-67441036E373}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotChocolateIssues.DictionaryInput", "HotChocolateIssues.DictionaryInput\HotChocolateIssues.DictionaryInput.csproj", "{4F100FBF-65E6-4DDD-AD1A-E51717541C17}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotChocolateIssues.FilterUsage", "HotChocolateIssues.FilterUsage\HotChocolateIssues.FilterUsage.csproj", "{42AB545D-B270-4735-A452-77F476BA4624}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +34,13 @@ Global
 		{D818D6E6-3095-4CB5-B8DA-67441036E373}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D818D6E6-3095-4CB5-B8DA-67441036E373}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D818D6E6-3095-4CB5-B8DA-67441036E373}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F100FBF-65E6-4DDD-AD1A-E51717541C17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F100FBF-65E6-4DDD-AD1A-E51717541C17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F100FBF-65E6-4DDD-AD1A-E51717541C17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F100FBF-65E6-4DDD-AD1A-E51717541C17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42AB545D-B270-4735-A452-77F476BA4624}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42AB545D-B270-4735-A452-77F476BA4624}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42AB545D-B270-4735-A452-77F476BA4624}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42AB545D-B270-4735-A452-77F476BA4624}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

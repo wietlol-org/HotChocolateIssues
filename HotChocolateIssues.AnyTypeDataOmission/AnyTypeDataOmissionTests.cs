@@ -7,8 +7,7 @@ using Xunit.Abstractions;
 namespace HotChocolateIssues.AnyTypeDataOmission;
 
 public class AnyTypeDataOmissionTests(
-    WebApplicationFactory<Program> factory,
-    ITestOutputHelper testOutputHelper
+    WebApplicationFactory<Program> factory
 ) : TestHelper<Program>
 {
     protected override WebApplicationFactory<Program> Factory { get; } = factory;
@@ -23,7 +22,6 @@ public class AnyTypeDataOmissionTests(
     public async Task GetBooks()
     {
         var content = await RunQuery("Books");
-        testOutputHelper.WriteLine(content);
 
         var json = JObject.Parse(content);
         var books = json.SelectTokens("$.data.books[*]").ToList();

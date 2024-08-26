@@ -1,0 +1,7 @@
+{
+	filter: {
+		author: {
+			name: {eq: "Jon"}
+		}
+	}
+}

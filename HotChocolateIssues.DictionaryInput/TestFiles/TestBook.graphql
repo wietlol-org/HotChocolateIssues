@@ -1,0 +1,5 @@
+query TestBook(
+    $input: BookPartial!
+) {
+    testBook(input: $input)
+}

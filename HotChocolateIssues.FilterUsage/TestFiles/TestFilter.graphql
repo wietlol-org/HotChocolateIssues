@@ -1,0 +1,11 @@
+query TestFilter(
+    $filter: BookFilterInput!
+) {
+    testFilter(filter: $filter) {
+        title
+        author {
+            name
+            familyName
+        }
+    }
+}

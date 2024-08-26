@@ -1,0 +1,19 @@
+schema {
+    query: Query
+}
+
+type Query {
+    testBook(input: BookPartial!): Any
+}
+
+input AuthorPartial {
+    name: String
+    familyName: String
+}
+
+input BookPartial {
+    title: String
+    author: AuthorPartial
+}
+
+scalar Any
