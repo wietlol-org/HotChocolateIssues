@@ -33,7 +33,6 @@ public class BaseProgram
                 var exception = context.Features
                     .Get<IExceptionHandlerPathFeature>()!
                     .Error;
-                var response = new { error = exception.Message };
                 logger.GenericError(exception);
                 
                 return Task.CompletedTask;
