@@ -1,18 +1,18 @@
 {
-	person: {
-		name: "John Doe",
-		pets: [
+	"person": {
+		"name": "John Doe",
+		"pets": [
 			{
-				cat: {
-					name: "Felix"
+				"cat": {
+					"name": "Felix"
 				}
 			},
 			{
-				dog: {
-					name: "Cerberos",
-					breed: "Hotdog"
+				"dog": {
+					"name": "Cerberos",
+					"breed": "Hotdog"
 				}
-			},
+			}
 		]
 	}
 }

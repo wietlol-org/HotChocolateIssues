@@ -1,7 +1,7 @@
 {
-	input: {
-		author: {
-			name: "Michael"
+	"input": {
+		"author": {
+			"name": "Michael"
 		}
 	}
 }
