@@ -1,0 +1,8 @@
+query TestDateTimeOffset(
+    $input: InputDateTimeOffsetInput!
+) {
+    testDateTimeOffset(input: $input) {
+        dateTimes
+        texts
+    }
+}

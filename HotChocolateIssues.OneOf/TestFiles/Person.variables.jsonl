@@ -1,0 +1,18 @@
+{
+	person: {
+		name: "John Doe",
+		pets: [
+			{
+				cat: {
+					name: "Felix"
+				}
+			},
+			{
+				dog: {
+					name: "Cerberos",
+					breed: "Hotdog"
+				}
+			},
+		]
+	}
+}

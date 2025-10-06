@@ -1,7 +1,0 @@
-mutation {
-    deleteBooks(
-        filter: {
-            title: {eq: "Test"}
-        }
-    )
-}

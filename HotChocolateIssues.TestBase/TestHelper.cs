@@ -28,7 +28,7 @@ public abstract class TestHelper<TEntryPoint> : IClassFixture<WebApplicationFact
         return schema;
     }
 
-    protected async Task<string> RunQuery(string name)
+    protected async Task<string> RunQuery(string name, bool formatOutput = true)
     {
         var client = Factory.CreateClient();
 
@@ -36,33 +36,35 @@ public abstract class TestHelper<TEntryPoint> : IClassFixture<WebApplicationFact
         var variables = ReadVariables(name);
 
         var request = new HttpRequestMessage(HttpMethod.Post, "/graphql");
-        request.Content = new StringContent(JsonConvert.SerializeObject(new
+
+        var input = JsonConvert.SerializeObject(new
         {
             query,
-            variables,
-        }), Encoding.UTF8, "application/json");
+            variables = "%variables%",
+        }).Replace("\"%variables%\"", variables);
+        request.Content = new StringContent(input, Encoding.UTF8, "application/json");
 
         var response = await client.SendAsync(request);
 
-        response.EnsureSuccessStatusCode();
         var content = await response.Content.ReadAsStringAsync();
 
-        await File.WriteAllTextAsync($"../../../TestFiles/{name}.output.jsonl", TryFormatJson(content));
+        await File.WriteAllTextAsync($"../../../TestFiles/{name}.output.jsonl", formatOutput ? TryFormatJson(content) : content);
+        response.EnsureSuccessStatusCode();
 
         return content;
     }
 
-    private static JObject ReadVariables(string name)
+    private static string ReadVariables(string name)
     {
         var path = $"../../../TestFiles/{name}.variables.jsonl";
 
         if (File.Exists(path))
         {
             var json = File.ReadAllText(path);
-            return JObject.Parse(json);
+            return json;
         }
 
-        return JObject.Parse("{}");
+        return "{}";
     }
 
     private static string TryFormatJson(string json)

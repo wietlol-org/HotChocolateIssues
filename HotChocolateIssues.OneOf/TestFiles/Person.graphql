@@ -1,0 +1,19 @@
+query Person(
+    $person: PersonInput!
+) {
+    person(
+        person: $person
+    ) {
+        name
+        pets {
+            __typename
+            ... on Cat {
+                name
+            }
+            ... on Dog {
+                name
+                breed
+            }
+        }
+    }
+}

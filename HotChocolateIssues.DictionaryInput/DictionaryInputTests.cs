@@ -18,6 +18,9 @@ public class DictionaryInputTests(
     }
 
     [Fact]
+    // the issue is that when using typed dictionaries as input, the dictionary is filled with all the properties from the type.
+    // while the goal is to only include the values that were included in the input, allowing us to know which values were set (explicitly to null)
+    // and which properties were not present in the input data.
     public async Task TestBook()
     {
         var content = await RunQuery("TestBook");
@@ -33,7 +36,7 @@ public class DictionaryInputTests(
         Assert.NotNull(author);
         Assert.NotNull(name);
         Assert.Equal("Michael", name.Value<string>());
-        Assert.Null(title); // title should be missing in the output
-        Assert.Null(familyName); // familyName should be missing in the output
+        Assert.Null(title); // title should be missing in the output because it is not included in the input
+        Assert.Null(familyName); // familyName should be missing in the output because it is not included in the input
     }
 }

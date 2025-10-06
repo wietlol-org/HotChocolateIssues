@@ -1,0 +1,56 @@
+schema {
+    query: Query
+}
+
+interface IPet {
+    name: String!
+}
+
+type Cat implements IPet {
+    name: String!
+}
+
+type Dog implements IPet {
+    name: String!
+    breed: String!
+}
+
+type Person {
+    name: String!
+    pets: [IPet!]!
+}
+
+type Query {
+    person(person: PersonInput!): Person! @cost(weight: "10")
+}
+
+input CatInput {
+    name: String!
+}
+
+input DogInput {
+    name: String!
+    breed: String!
+}
+
+input IPetInput @oneOf {
+    cat: CatInput
+    dog: DogInput
+}
+
+input PersonInput {
+    name: String!
+    pets: [IPetInput!]!
+}
+
+"The purpose of the `cost` directive is to define a `weight` for GraphQL types, fields, and arguments. Static analysis can use these weights when calculating the overall cost of a query or response."
+directive @cost("The `weight` argument defines what value to add to the overall cost for every appearance, or possible appearance, of a type, field, argument, etc." weight: String!) on SCALAR | OBJECT | FIELD_DEFINITION | ARGUMENT_DEFINITION | ENUM | INPUT_FIELD_DEFINITION
+
+"""
+The `@oneOf` directive is used within the type system definition language
+ to indicate:
+
+ - an Input Object is a Oneof Input Object, or
+ - an Object Type's Field is a Oneof Field.
+"""
+directive @oneOf on INPUT_OBJECT

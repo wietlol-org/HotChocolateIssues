@@ -1,0 +1,8 @@
+query TestDateTime(
+    $input: InputDateTimeInput!
+) {
+    testDateTime(input: $input) {
+        dateTimes
+        texts
+    }
+}

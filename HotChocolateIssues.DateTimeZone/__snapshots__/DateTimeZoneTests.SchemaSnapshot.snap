@@ -1,0 +1,67 @@
+﻿schema {
+  query: Query
+}
+
+type Item {
+  name: String!
+  createdAt: DateTime!
+  createdAtZoned: DateTime!
+  createdAt2: DateTime
+  createdAtZoned2: DateTime
+}
+
+type OutputDateTime {
+  dateTimes: [DateTime!]!
+  texts: [String!]!
+}
+
+type OutputDateTimeOffset {
+  dateTimes: [DateTime!]!
+  texts: [String!]!
+}
+
+type Query {
+  items(where: ItemFilterInput @cost(weight: "10")): [Item!]! @cost(weight: "10")
+  testDateTime(input: InputDateTimeInput!): OutputDateTime!
+  testDateTimeOffset(input: InputDateTimeOffsetInput!): OutputDateTimeOffset!
+}
+
+input CustomDateTimeFilterInput {
+  eq: DateTime @cost(weight: "10")
+  neq: DateTime @cost(weight: "10")
+  in: [DateTime!] @cost(weight: "10")
+  nin: [DateTime!] @cost(weight: "10")
+  gt: DateTime @cost(weight: "10")
+  ngt: DateTime @cost(weight: "10")
+  gte: DateTime @cost(weight: "10")
+  ngte: DateTime @cost(weight: "10")
+  lt: DateTime @cost(weight: "10")
+  nlt: DateTime @cost(weight: "10")
+  lte: DateTime @cost(weight: "10")
+  nlte: DateTime @cost(weight: "10")
+}
+
+input InputDateTimeInput {
+  dateTimes: [DateTime!]!
+}
+
+input InputDateTimeOffsetInput {
+  dateTimes: [DateTime!]!
+}
+
+input ItemFilterInput {
+  and: [ItemFilterInput!]
+  or: [ItemFilterInput!]
+  createdAt: CustomDateTimeFilterInput
+  createdAtZoned: CustomDateTimeFilterInput
+  createdAt2: CustomDateTimeFilterInput
+  createdAtZoned2: CustomDateTimeFilterInput
+}
+
+"The purpose of the `cost` directive is to define a `weight` for GraphQL types, fields, and arguments. Static analysis can use these weights when calculating the overall cost of a query or response."
+directive @cost("The `weight` argument defines what value to add to the overall cost for every appearance, or possible appearance, of a type, field, argument, etc." weight: String!) on SCALAR | OBJECT | FIELD_DEFINITION | ARGUMENT_DEFINITION | ENUM | INPUT_FIELD_DEFINITION
+
+"The `@specifiedBy` directive is used within the type system definition language to provide a URL for specifying the behavior of custom scalar definitions."
+directive @specifiedBy("The specifiedBy URL points to a human-readable specification. This field will only read a result for scalar types." url: String!) on SCALAR
+
+scalar DateTime @specifiedBy(url: "https:\/\/www.graphql-scalars.com\/date-time")
